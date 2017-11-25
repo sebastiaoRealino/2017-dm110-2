@@ -2,6 +2,8 @@ apply plugin: 'ear'
 
 dependencies {
 	deploy project(path: ':dm110-war', configuration: 'archives')
+	earlib project(':dm110-api')
+	earlib project(':dm110-core')
 }
 
 ear {
