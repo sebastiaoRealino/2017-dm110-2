@@ -12,6 +12,18 @@ gradle clean build
 gradle cleanEclipse eclipse
 ```
 
+## Subindo o WildFly
+
+### No Windows:
+```
+${WildFlyHomeDir}/bin/standalone.bat
+```
+
+### No Linux ou Mac:
+```
+${WildFlyHomeDir}/bin/standalone.sh
+```
+
 ## Deployment do EAR
 
 Copiar o EAR gerado de:
