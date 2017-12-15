@@ -7,8 +7,8 @@ import javax.ejb.Local;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
-import br.inatel.pos.mobile.dm110.dao.ProductDAO;
-import br.inatel.pos.mobile.dm110.entities.Product;
+import br.inatel.pos.mobile.dm110.dao.ClientDAO;
+import br.inatel.pos.mobile.dm110.entities.Client;
 import br.inatel.pos.mobile.dm110.interfaces.InventoryLocal;
 import br.inatel.pos.mobile.dm110.interfaces.InventoryRemote;
 
@@ -18,21 +18,22 @@ import br.inatel.pos.mobile.dm110.interfaces.InventoryRemote;
 public class InventoryBean implements InventoryLocal, InventoryRemote {
 
 	@EJB
-	private ProductDAO dao;
+	private ClientDAO dao;
 
 	@Override
-	public void addNewProduct(String productName) {
-		Product product = new Product();
-		product.setName(productName);
-		product.setQuantity(0);
-		dao.insert(product);
+	public void addNewClient(String name, String email) {
+		Client client = new Client();
+		client.setName(name);
+		client.setEmail(email);
+		dao.insert(client);
+		
 	}
 
 	@Override
-	public String[] listProductNames() {
+	public String[] listClientNames() {
 		return dao.findAll()
 				.stream()
-				.map(Product::getName)
+				.map(Client::identeValues)
 				.collect(Collectors.toList())
 				.toArray(new String[0]);
 	}

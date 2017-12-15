@@ -11,12 +11,12 @@ import javax.ws.rs.core.MediaType;
 public interface InventoryService {
 
 	@POST
-	@Path("/product/{productName}")
-	void addNewProduct(@PathParam("productName") String productName);
+	@Path("/client/{clientName}/{clientEmail}")
+	void addNewClient(@PathParam("clientName") String productName, @PathParam ("clientName")String clientEmail);
 
 	@GET
-	@Path("/product/all")
+	@Path("/client/all")
 	@Produces(MediaType.APPLICATION_JSON)
-	String[] listProductNames();
+	String[] listClientNames();
 
 }

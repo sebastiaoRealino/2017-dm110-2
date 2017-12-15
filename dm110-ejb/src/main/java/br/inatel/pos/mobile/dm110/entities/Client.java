@@ -7,15 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@SequenceGenerator(name = "seq_product", sequenceName = "seq_product", allocationSize = 1)
-public class Product {
+@SequenceGenerator(name = "seq_client", sequenceName = "seq_client", allocationSize = 1)
+public class Client {
 
 	@Id
-	@GeneratedValue(generator = "seq_product", strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(generator = "seq_client", strategy = GenerationType.SEQUENCE)
 	private Integer id;
 
 	private String name;
-	private Integer quantity;
+	private String email;
 
 	public Integer getId() {
 		return id;
@@ -33,12 +33,15 @@ public class Product {
 		this.name = name;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String identeValues() {
+		return "name: " + this.name + " e-mail: " + this.email;
 	}
 
 }

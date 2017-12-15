@@ -13,13 +13,13 @@ public class InventoryServiceImpl implements InventoryService {
 	private InventoryRemote inventoryBean;
 
 	@Override
-	public void addNewProduct(String productName) {
-		inventoryBean.addNewProduct(productName);
+	public void addNewClient(String clientName, String clientEmail) {
+		// TODO Auto-generated method stub
+		inventoryBean.addNewClient(clientName, clientEmail);
 	}
 
 	@Override
-	public String[] listProductNames() {
-		return inventoryBean.listProductNames();
+	public String[] listClientNames() {
+		return inventoryBean.listClientNames();
 	}
-
 }
