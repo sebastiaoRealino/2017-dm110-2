@@ -1,1 +1,1 @@
-include "dm110-ear", "dm110-war", "dm110-api", "dm110-core", "dm110-ejb", "dm110-ejb-client"
+include "dm110-poller-ear", "dm110-poller-war", "dm110-poller-api", "dm110-poller-impl", "dm110-poller-ejb", "dm110-poller-ejb-client"
