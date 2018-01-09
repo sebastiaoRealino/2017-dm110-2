@@ -6,8 +6,8 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import br.inatel.pos.mobile.dm110.impl.HelloServiceImpl;
-import br.inatel.pos.mobile.dm110.impl.InventoryServiceImpl;
+
+import br.inatel.pos.mobile.dm110.impl.IpAddressServiceImpl;
 
 @ApplicationPath("/api")
 public class RestApplication extends Application {
@@ -15,8 +15,7 @@ public class RestApplication extends Application {
 	@Override
 	public Set<Class<?>> getClasses() {
 		Set<Class<?>> classes = new HashSet<>();
-		classes.add(HelloServiceImpl.class);
-		classes.add(InventoryServiceImpl.class);
+		classes.add(IpAddressServiceImpl.class);
 		return classes;
 	}
 
