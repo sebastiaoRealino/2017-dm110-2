@@ -17,7 +17,7 @@ import br.inatel.pos.mobile.dm110.utils.PingExec;
 		@ActivationConfigProperty(propertyName = "destinationType",
 								  propertyValue = "javax.jms.Queue"),
 		@ActivationConfigProperty(propertyName = "destination",
-								  propertyValue = "java:/jms/queue/QueueIpAddress"),
+								  propertyValue = "java:/jms/queue/IpAddressQueue"),
 		@ActivationConfigProperty(propertyName = "maxSession",
 								  propertyValue = "3")
 })

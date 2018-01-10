@@ -8,15 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ipaddress")
+@Table(name = "poller")
 public class IpAddress implements Serializable{
 	
 	private static final long serialVersionUID = -4887666010522559009L;
+	
 	@Id
 	@Column(name = "ip")
 	public String ip;
+	
 	@Column(name = "status")
 	public Boolean status;
+	
 	public String getIp() {
 		return ip;
 	}

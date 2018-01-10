@@ -15,15 +15,13 @@ public class IpAddressServiceImpl implements IpAddressService{
 	
 	@Override
 	public void getIpAddress(String ipAddress, String mask) {
-		System.out.println("CAIU AQUIIIIII!"+ipAddress+" "+mask);
 		ipAddressRemote.getIpAddress(ipAddress, mask);
-		System.out.println("NAO PASSOU DAQUI!");
 	}
 
 	@Override
-	public String[] getIpAddressStatus() {
+	public String getIpAddressStatus(String ip) {
 		// TODO Auto-generated method stub
-		return null;
+		return ipAddressRemote.getIpAddressStatus(ip);
 	}
 
 }

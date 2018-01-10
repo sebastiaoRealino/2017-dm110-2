@@ -16,6 +16,6 @@ public interface IpAddressService {
 	@GET
 	@Path("/status/{ip}")
 	@Produces(MediaType.APPLICATION_JSON)
-	String[] getIpAddressStatus();
+	String getIpAddressStatus(@PathParam("ip") String ipAddress);
 
 }

@@ -31,7 +31,8 @@ public class IpAddressBean implements IpAddressRemoteInterface, IpAddressLocalIn
 	@Resource(lookup = "java:/ConnectionFactory")
 	private ConnectionFactory connectionFactory;
 
-	@Resource(lookup = "java:/jms/queue/QueueIpAddress")
+	//@Resource(lookup = "java:/jms/queue/QueueIpAddress")
+	@Resource(lookup = "java:/jms/queue/IpAddressQueue")
 	private Queue queue;
 	@Override
 	public void getIpAddress(String ipAddress, String mask) {
@@ -49,13 +50,17 @@ public class IpAddressBean implements IpAddressRemoteInterface, IpAddressLocalIn
 
 			for (String singleIp : ip) {
 				System.out.println(cont);
-				if (cont == 9) {
+				if (cont == 9 || ip[ip.length -1] == singleIp) {
 					lastSent[cont] = singleIp;
 					IpAddressList ipListSerializable = new IpAddressList();
 					ipListSerializable.setList(lastSent);
 					objMessage.setObject(ipListSerializable);
 					producer.send(objMessage);
+					for (String toShow : lastSent) {
+						System.out.println("lista: " + toShow);	
+					}
 					lastSent = new String[10];
+					
 					cont = 0;
 				} else {
 					lastSent[cont] = singleIp;
